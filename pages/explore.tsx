@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -386,7 +386,14 @@ const destinations = {
 };
 
 export default function ExplorePage() {
-  const destinationId = new URLSearchParams(window.location.search).get('destination');
+  const [destinationId, setDestinationId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setDestinationId(new URLSearchParams(window.location.search).get('destination'));
+    }
+  }, []);
+
   const destination = destinationId ? destinations[destinationId as keyof typeof destinations] : null;
 
   if (!destination) {
