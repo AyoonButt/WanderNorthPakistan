@@ -1,0 +1,419 @@
+<project_requirements>
+  <overview>
+    Create a premium tourism website for "Wander North Pakistan" - a boutique travel agency specializing in small-group journeys through Pakistan's northern regions (Karakoram, Hunza, Skardu, Fairy Meadows, Deosai Plains). The site should inspire wanderlust while building trust and converting visitors into travelers.
+  </overview>
+
+  <tech_stack>
+    <framework>Next.js 14 with App Router</framework>
+    <styling>Tailwind CSS with custom design system</styling>
+    <ui_components>Headless UI or Radix UI for accessibility</ui_components>
+    <animations>Framer Motion for smooth interactions</animations>
+    <icons>Lucide React or Heroicons</icons>
+    <fonts>Google Fonts: Poppins (headings), Inter (body text)</fonts>
+    <image_optimization>Next.js Image component with WebP format</image_optimization>
+  </tech_stack>
+
+  <design_system>
+    <colors>
+      <primary>
+        <mountain_blue>#1e40af</mountain_blue>
+        <glacier_white>#f8fafc</glacier_white>
+        <alpine_green>#059669</alpine_green>
+      </primary>
+      <accent>
+        <sunrise_orange>#f97316</sunrise_orange>
+        <earth_brown>#92400e</earth_brown>
+        <sunset_pink>#ec4899</sunset_pink>
+      </accent>
+      <neutral>
+        <charcoal>#374151</charcoal>
+        <light_gray>#f3f4f6</light_gray>
+        <medium_gray>#6b7280</medium_gray>
+      </neutral>
+    </colors>
+
+    <typography>
+      <headings>
+        <font>Poppins</font>
+        <weights>400, 500, 600, 700</weights>
+        <sizes>
+          <h1>text-4xl md:text-6xl (36px/60px)</h1>
+          <h2>text-3xl md:text-5xl (30px/48px)</h2>
+          <h3>text-2xl md:text-4xl (24px/36px)</h3>
+          <h4>text-xl md:text-2xl (20px/24px)</h4>
+        </sizes>
+      </headings>
+      <body>
+        <font>Inter</font>
+        <weights>400, 500, 600</weights>
+        <sizes>
+          <large>text-lg (18px)</large>
+          <base>text-base (16px)</base>
+          <small>text-sm (14px)</small>
+        </sizes>
+        <line_height>leading-relaxed (1.625)</line_height>
+      </body>
+    </typography>
+
+    <spacing>
+      <section_padding>py-16 md:py-24</section_padding>
+      <container_max_width>max-w-7xl mx-auto px-4 sm:px-6 lg:px-8</container_max_width>
+      <grid_gaps>gap-6 md:gap-8 lg:gap-12</grid_gaps>
+    </spacing>
+
+    <components>
+      <buttons>
+        <primary>bg-sunrise-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105</primary>
+        <secondary>border-2 border-mountain-blue text-mountain-blue hover:bg-mountain-blue hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300</secondary>
+        <ghost>text-mountain-blue hover:text-orange-500 hover:bg-light-gray px-6 py-3 rounded-lg transition-all duration-300</ghost>
+      </buttons>
+      <cards>
+        <base>bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden</base>
+        <hover_effect>transform hover:-translate-y-2</hover_effect>
+      </cards>
+    </components>
+  </design_system>
+
+  <website_structure>
+    <pages>
+      <home>
+        <path>/</path>
+        <components>
+          <hero_section>
+            <background>Full-screen video/image of Karakoram mountains</background>
+            <content>
+              <headline>"Answer the Call of the Karakoram."</headline>
+              <subheadline>Authentic, small-group journeys through Gilgit, Skardu, Hunza, Fairy Meadows &amp; Deosai Plains.</subheadline>
+              <primary_cta>Plan My Northern Escape</primary_cta>
+              <secondary_cta>Browse Upcoming Departures</secondary_cta>
+            </content>
+            <overlay>bg-black/30 for text readability</overlay>
+          </hero_section>
+
+          <destinations_carousel>
+            <title>Discover the Crown Jewels of the North</title>
+            <cards>
+              <skardu>Mirror-like lakes, ancient forts &amp; the gateway to K2.</skardu>
+              <hunza>Apricot blossoms, UNESCO-listed forts, and warm Wakhi hospitality.</hunza>
+              <fairy_meadows>Alpine pastures under the 8,126 m face of Nanga Parbat.</fairy_meadows>
+              <deosai>Wildflower-carpeted plateau at 4,000 m, home to Himalayan brown bears.</deosai>
+              <khunjerab>Pakistan-China border at 15,400 ft---snow-topped even in July.</khunjerab>
+            </cards>
+            <interaction>Horizontal scroll on mobile, grid on desktop</interaction>
+          </destinations_carousel>
+
+          <featured_packages>
+            <title>Featured Experiences</title>
+            <layout>3-column grid on desktop, single column on mobile</layout>
+            <package_cards>
+              <elements>Image, title, duration, price_from, highlights_list, view_itinerary_cta</elements>
+              <hover_effect>Scale and shadow transition</hover_effect>
+            </package_cards>
+          </featured_packages>
+
+          <experiences_highlight>
+            <title>Signature Moments</title>
+            <list>
+              <item>Sunset tea at Eagle's Nest, Hunza</item>
+              <item>4×4 jeep crossing of Deosai's alpine rivers</item>
+              <item>Yak-butter tea tasting with a Balti family</item>
+              <item>Night-sky photography workshop in Fairy Meadows</item>
+            </list>
+            <layout>2x2 grid with icons and descriptions</layout>
+          </experiences_highlight>
+
+          <testimonials>
+            <title>What Fellow Travelers Say</title>
+            <format>Rotating cards with traveler photo, quote, name, country</format>
+            <sample>"I've trekked in Nepal and Patagonia, but nowhere felt as untouched---or as welcoming---as Northern Pakistan. Wander North's local touch made all the difference." - Laura M., USA</sample>
+          </testimonials>
+
+          <trust_indicators>
+            <safety_badges>Licensed guides, vetted vehicles, 24/7 emergency line</safety_badges>
+            <review_rating>5-star rating display with total reviews</review_rating>
+            <responsible_travel>Sustainable tourism certification</responsible_travel>
+          </trust_indicators>
+
+          <sticky_cta>
+            <button>Plan My Trip</button>
+            <behavior>Appears after scrolling 50vh, fixed bottom-right</behavior>
+            <mobile>Full-width bottom bar</mobile>
+          </sticky_cta>
+        </components>
+      </home>
+
+      <destinations>
+        <path>/destinations</path>
+        <layout>Interactive map or grid view toggle</layout>
+        <individual_pages>/destinations/[slug]</individual_pages>
+      </destinations>
+
+      <tours>
+        <path>/tours</path>
+        <filters>Adventure, Culture, Family, Photography, Duration, Price</filters>
+        <individual_tours>/tours/[slug]</individual_tours>
+      </tours>
+
+      <travel_guide>
+        <path>/travel-guide</path>
+        <categories>Planning essentials, packing lists, safety prep, blog articles</categories>
+      </travel_guide>
+
+      <about>
+        <path>/about</path>
+        <sections>Our story, mission, vision, values, team bios</sections>
+      </about>
+
+      <contact>
+        <path>/contact</path>
+        <features>Contact form, WhatsApp integration, phone, office map</features>
+      </contact>
+    </pages>
+  </website_structure>
+
+  <key_components>
+    <navigation>
+      <desktop>
+        <layout>Horizontal menu with hover dropdowns</layout>
+        <items>Destinations, Tours &amp; Packages, Travel Guide, About, Contact</items>
+        <logo>Left-aligned with company name</logo>
+        <cta>Plan My Trip button (primary style)</cta>
+      </desktop>
+      <mobile>
+        <layout>Hamburger menu with slide-out panel</layout>
+        <behavior>Smooth animations, overlay background</behavior>
+      </mobile>
+      <behavior>Transparent on hero, solid white on scroll with shadow</behavior>
+    </navigation>
+
+    <hero_video_section>
+      <video>
+        <src>Mountain landscape footage (muted autoplay)</src>
+        <fallback>High-resolution hero image</fallback>
+        <overlay>Gradient overlay for text readability</overlay>
+      </video>
+      <content>
+        <headline>Large, bold typography with fade-in animation</headline>
+        <subheadline>Supporting text with delayed fade-in</subheadline>
+        <cta_buttons>Two buttons with staggered animations</cta_buttons>
+      </content>
+      <scroll_indicator>Animated down arrow</scroll_indicator>
+    </hero_video_section>
+
+    <destination_cards>
+      <layout>
+        <mobile>Horizontal scroll carousel</mobile>
+        <tablet>2-column grid</tablet>
+        <desktop>5-column grid</desktop>
+      </layout>
+      <card_structure>
+        <image>Aspect ratio 4:3, with hover zoom effect</image>
+        <content>
+          <title>Destination name</title>
+          <description>Brief compelling description</description>
+          <cta>Explore button</cta>
+        </content>
+        <overlay>Gradient overlay on hover with smooth transition</overlay>
+      </card_structure>
+    </destination_cards>
+
+    <package_cards>
+      <structure>
+        <image>Hero image with gradient overlay</image>
+        <badge>Package type (Adventure/Culture/etc.)</badge>
+        <content>
+          <title>Package name</title>
+          <duration>Days/nights</duration>
+          <price>From $XXX per person</price>
+          <highlights>Key features list</highlights>
+          <cta>View Itinerary button</cta>
+        </content>
+      </structure>
+      <hover_effects>
+        <image>Subtle zoom effect</image>
+        <card>Lift with shadow increase</card>
+        <button>Color transition and scale</button>
+      </hover_effects>
+    </package_cards>
+
+    <testimonial_slider>
+      <layout>Cards that auto-rotate every 5 seconds</layout>
+      <controls>Dots indicator, pause on hover</controls>
+      <card_design>
+        <quote>Large quotation marks, italic text</quote>
+        <author>Name, country, photo</author>
+        <rating>5-star display</rating>
+      </card_design>
+    </testimonial_slider>
+
+    <contact_form>
+      <fields>
+        <name>Required, text input</name>
+        <email>Required, email validation</email>
+        <whatsapp>Optional, phone format</whatsapp>
+        <travel_dates>Date picker range</travel_dates>
+        <destinations>Multi-select checkboxes</destinations>
+        <message>Textarea for additional info</message>
+      </fields>
+      <submission>
+        <button>"Start My Adventure"</button>
+        <validation>Real-time validation with error states</validation>
+        <success>Thank you message with follow-up info</success>
+      </submission>
+    </contact_form>
+
+    <whatsapp_integration>
+      <floating_button>
+        <position>Fixed bottom-left</position>
+        <icon>WhatsApp logo with pulse animation</icon>
+        <behavior>Click to open WhatsApp with pre-filled message</behavior>
+      </floating_button>
+      <pre_message>"Hi! I'm interested in exploring Northern Pakistan. Can you help me plan my trip?"</pre_message>
+    </whatsapp_integration>
+  </key_components>
+
+  <interactive_features>
+    <scroll_animations>
+      <library>Framer Motion with IntersectionObserver</library>
+      <effects>
+        <fade_in>Elements fade in when entering viewport</fade_in>
+        <slide_up>Cards slide up with stagger effect</slide_up>
+        <parallax>Background images move slower than content</parallax>
+      </effects>
+    </scroll_animations>
+
+    <image_optimization>
+      <format>WebP with fallback to JPEG</format>
+      <lazy_loading>Next.js Image component with blur placeholder</lazy_loading>
+      <responsive>Multiple sizes for different screen widths</responsive>
+    </image_optimization>
+
+    <search_functionality>
+      <global_search>Header search bar with autocomplete</global_search>
+      <filters>Destination search, tour filtering, blog search</filters>
+      <results>Real-time results with highlighting</results>
+    </search_functionality>
+  </interactive_features>
+
+  <accessibility_requirements>
+    <standards>WCAG 2.1 AA compliance</standards>
+    <features>
+      <keyboard_navigation>Full site navigable via keyboard</keyboard_navigation>
+      <screen_readers>Proper ARIA labels and semantic HTML</screen_readers>
+      <color_contrast>Minimum 4.5:1 ratio for text</color_contrast>
+      <alt_text>Descriptive alt text for all images</alt_text>
+      <focus_indicators>Clear focus states for interactive elements</focus_indicators>
+    </features>
+  </accessibility_requirements>
+
+  <performance_targets>
+    <core_web_vitals>
+      <lcp>Largest Contentful Paint &lt; 2.5s</lcp>
+      <fid>First Input Delay &lt; 100ms</fid>
+      <cls>Cumulative Layout Shift &lt; 0.1</cls>
+    </core_web_vitals>
+    <optimization>
+      <images>WebP format, responsive sizing, lazy loading</images>
+      <fonts>Preload critical fonts, font-display: swap</fonts>
+      <css>Critical CSS inlined, non-critical deferred</css>
+      <javascript>Code splitting, dynamic imports</javascript>
+    </optimization>
+  </performance_targets>
+
+  <seo_requirements>
+    <meta_data>
+      <title>Descriptive, keyword-rich titles under 60 characters</title>
+      <description>Compelling meta descriptions under 155 characters</description>
+      <og_tags>Open Graph tags for social media sharing</og_tags>
+      <structured_data>Schema markup for tourism, organization, reviews</structured_data>
+    </meta_data>
+    <content>
+      <headings>Proper H1-H6 hierarchy</headings>
+      <urls>Clean, descriptive URLs (e.g., /destinations/hunza-valley)</urls>
+      <internal_linking>Strategic linking between related content</internal_linking>
+    </content>
+  </seo_requirements>
+
+  <mobile_specific>
+    <design>
+      <approach>Mobile-first responsive design</approach>
+      <touch_targets>Minimum 44px for touch elements</touch_targets>
+      <navigation>Simplified mobile menu with clear hierarchy</navigation>
+      <images>Optimized sizes and formats for mobile</images>
+    </design>
+    <features>
+      <click_to_call>Phone numbers as clickable links</click_to_call>
+      <whatsapp>Direct WhatsApp integration</whatsapp>
+      <maps>Touch-friendly map interactions</maps>
+      <forms>Large, easy-to-tap form fields</forms>
+    </features>
+  </mobile_specific>
+
+  <content_guidelines>
+    <tone>
+      <voice>Inspiring, knowledgeable, trustworthy, locally authentic</voice>
+      <style>Sensory language that evokes the mountain experience</style>
+      <cultural_sensitivity>Respectful of local customs and traditions</cultural_sensitivity>
+    </tone>
+    <structure>
+      <headings>Clear, descriptive headings with keywords</headings>
+      <paragraphs>Short, scannable paragraphs</paragraphs>
+      <lists>Bullet points for easy consumption</lists>
+      <cta>Clear, action-oriented call-to-action text</cta>
+    </structure>
+  </content_guidelines>
+
+  <implementation_priorities>
+    <phase_1>
+      <homepage>Complete homepage with hero, destinations, packages</homepage>
+      <navigation>Responsive navigation system</navigation>
+      <contact>Contact page with form and WhatsApp integration</contact>
+      <basic_seo>Meta tags, structured data, sitemap</basic_seo>
+    </phase_1>
+    <phase_2>
+      <destination_pages>Individual destination detail pages</destination_pages>
+      <tour_pages>Tour package pages with itineraries</tour_pages>
+      <blog>Travel guide section with search</blog>
+      <about>About page with team and values</about>
+    </phase_2>
+    <phase_3>
+      <advanced_features>Search functionality, filters, user accounts</advanced_features>
+      <integrations>Booking system, payment processing</integrations>
+      <analytics>Google Analytics, conversion tracking</analytics>
+    </phase_3>
+  </implementation_priorities>
+
+  <folder_structure>
+    <app>
+      <layout>Root layout with navigation and footer</layout>
+      <page>Homepage</page>
+      <destinations>
+        <page>Destinations listing</page>
+        <slug>Individual destination pages</slug>
+      </destinations>
+      <tours>
+        <page>Tours listing</page>
+        <slug>Individual tour pages</slug>
+      </tours>
+      <travel-guide>Travel guide pages</travel-guide>
+      <about>About page</about>
+      <contact>Contact page</contact>
+    </app>
+    <components>
+      <ui>Reusable UI components</ui>
+      <sections>Page-specific sections</sections>
+      <forms>Form components</forms>
+    </components>
+    <lib>Utility functions and configurations</lib>
+    <public>Static assets (images, icons, videos)</public>
+    <styles>Global styles and Tailwind config</styles>
+  </folder_structure>
+
+  <development_notes>
+    <state_management>React Context or Zustand for simple state</state_management>
+    <data_fetching>Static generation where possible, ISR for dynamic content</data_fetching>
+    <error_handling>Error boundaries and 404/500 pages</error_handling>
+    <testing>Component testing with Jest and React Testing Library</testing>
+    <deployment>Vercel or Netlify with automatic deployments</deployment>
+  </development_notes>
+</project_requirements>
